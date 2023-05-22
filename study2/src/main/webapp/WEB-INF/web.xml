@@ -1,0 +1,58 @@
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	version="4.0">
+
+	<!-- annotation @webServlet으로 대신 사용 -->
+	<servlet>
+		<servlet-name>helloServlet</servlet-name>
+		<servlet-class>ch02.hello.HelloServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>helloServlet</servlet-name>
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	<!-- 웹 서버 환결설정 -->
+	<context-param>
+		<param-name>url</param-name>
+		<param-value>127.0.0.1</param-value>
+	</context-param>
+	<context-param>
+		<param-name>user</param-name>
+		<param-value>sky</param-value>
+	</context-param>
+	
+	<!-- 서블릿 -->
+	<servlet>
+		<servlet-name>sampleServlet</servlet-name>
+		<servlet-class>ch02.sample.SampleServlet</servlet-class>
+		<!-- 해당 서블릿 환경 설정 -->
+		<init-param>
+			<param-name>name</param-name>
+			<param-value>김자바</param-value>
+		</init-param>
+		<init-param>
+			<param-name>city</param-name>
+			<param-value>서울</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>sampleServlet</servlet-name>
+		<url-pattern>/sam</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 에러 코드별 에러 처리 -->
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error/error404.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/error/error500.jsp</location>
+	</error-page>
+	
+</web-app>
