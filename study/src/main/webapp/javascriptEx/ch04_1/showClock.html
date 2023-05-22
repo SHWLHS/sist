@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<script type="text/javascript">
+//2023-04-11 16:15:10
+//2023-04-11 16:15:11
+function showClock(){
+	
+	var now = new Date();
+
+	var y = now.getFullYear(); 
+	var m = now.getMonth() +1; 
+	if(m<10) m = "0" +m;
+	var d = now.getDate();
+	if(d<10) d = "0" +d;
+	var hr = now.getHours();
+	if(hr<10) hr = "0" +hr;
+	var mn = now.getMinutes();
+	if(mn<10) mn = "0" +mn;
+	var sc = now.getSeconds();
+	if(sc<10) sc = "0" +sc;
+
+	let out = ` ${y}년 ${m}월 ${d}일 ${hr}:${mn}:${sc} `;
+	
+	document.querySelector('#nowDate').value = out;//값을 넣을때도 value
+	
+	setTimeout("showClock()",1000);
+}
+window.onload = () => showClock(); //onload는 표현식으로 써야하기 때문에 화살표함수 사용
+
+
+</script>
+
+
+</head>
+<body>
+
+<div style="width: 200px; margin: 30px auto; text-align: center;">
+	<input type="text" id="nowDate" readonly="readonly"
+	 style="border: none; font-size: 23px; width: 300px; pointer-events:none;">
+	 <!-- pointer-events:none : border을 없애도 클릭하면 나오는것을 완전히 없앰-->
+</div>
+
+
+
+</body>
+</html>

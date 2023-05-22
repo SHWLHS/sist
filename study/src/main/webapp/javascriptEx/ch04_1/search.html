@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+<script type="text/javascript" src ="dateUtil.js"></script>
+</head>
+<body>
+<div style="display: flex;">
+	<div style="margin: 30px auto; vertical-align: center; justify-content: center;">
+			<button type="button" onclick="today();">오늘</button>
+			<button type="button" onclick="week();">1주일</button>
+			<button type="button" onclick="oneMonth();">1개월</button>
+			<button type="button" onclick="ThreeMonth();">3개월</button>
+			<button type="button" onclick="sixMonth();">6개월</button>
+			<button type="button" onclick="oneYear();">1년</button>
+			<input type="text" id="preDate" required="required"> ~
+			<input type="text" id="afterDate" required="required">
+			<button type="button" onclick="search();">검색</button>
+	</div>
+</div>
+
+<script type="text/javascript">
+function today(){
+	//오늘
+	let date = new Date();
+	
+	document.querySelector('#preDate').value = dateToString(date);
+	document.querySelector('#afterDate').value = dateToString(date);
+}
+
+function week(){
+	let nDate = new Date();
+	let y = nDate.getFullYear();
+	let m = nDate.getMonth() + 1;
+	let d = nDate.getDate();
+	
+	let wDate = new Date(y,m,d);
+	wDate.setFullYear(y,m,d-7);
+	let wy =wDate.getFullYear();
+	let wm =wDate.getMonth();
+	if(wm < 10) wm = '0' + wm;
+	let wd =wDate.getDate();
+	if(wd < 10 ) wd ='0' + wd;
+
+	wDate = `${wy}-${wm}-${wd}`;
+	
+	document.querySelector('#preDate').value = wDate;
+	document.querySelector('#afterDate').value = dateToString(nDate);
+}
+
+function oneMonth(){
+	let nDate = new Date();
+	let y = nDate.getFullYear();
+	let m = nDate.getMonth() + 1;
+	let d = nDate.getDate();
+	
+	let wDate = new Date(y,m,d);
+	wDate.setFullYear(y,m-1,d);
+	let wy =wDate.getFullYear();
+	let wm =wDate.getMonth();
+	if(wm < 10) wm = '0' + wm;
+	let wd =wDate.getDate();
+	if(wd < 10 ) wd ='0' + wd;
+
+	wDate = `${wy}-${wm}-${wd}`;
+	
+	document.querySelector('#preDate').value = wDate;
+	document.querySelector('#afterDate').value = dateToString(nDate);
+	
+}
+
+function ThreeMonth(){
+	let nDate = new Date();
+	let y = nDate.getFullYear();
+	let m = nDate.getMonth() + 1;
+	let d = nDate.getDate();
+	
+	let wDate = new Date(y,m,d);
+	wDate.setFullYear(y,m-3,d);
+	let wy =wDate.getFullYear();
+	let wm =wDate.getMonth();
+	if(wm < 10) wm = '0' + wm;
+	let wd =wDate.getDate();
+	if(wd < 10 ) wd ='0' + wd;
+
+	wDate = `${wy}-${wm}-${wd}`;
+	
+	document.querySelector('#preDate').value = wDate;
+	document.querySelector('#afterDate').value = dateToString(nDate);
+}
+
+function sixMonth(){
+	let nDate = new Date();
+	let y = nDate.getFullYear();
+	let m = nDate.getMonth() + 1;
+	let d = nDate.getDate();
+	
+	let wDate = new Date(y,m,d);
+	wDate.setFullYear(y,m-6,d);
+	let wy =wDate.getFullYear();
+	let wm =wDate.getMonth();
+	if(wm < 10) wm = '0' + wm;
+	let wd =wDate.getDate();
+	if(wd < 10 ) wd ='0' + wd;
+
+	wDate = `${wy}-${wm}-${wd}`;
+	
+	document.querySelector('#preDate').value = wDate;
+	document.querySelector('#afterDate').value = dateToString(nDate);
+}
+function oneYear(){
+	let nDate = new Date();
+	let y = nDate.getFullYear();
+	let m = nDate.getMonth() + 1;
+	let d = nDate.getDate();
+	
+	let wDate = new Date(y,m,d);
+	wDate.setFullYear(y-1,m,d);
+	let wy =wDate.getFullYear();
+	let wm =wDate.getMonth();
+	if(wm < 10) wm = '0' + wm;
+	let wd =wDate.getDate();
+	if(wd < 10 ) wd ='0' + wd;
+
+	wDate = `${wy}-${wm}-${wd}`;
+	
+	document.querySelector('#preDate').value = wDate;
+	document.querySelector('#afterDate').value = dateToString(nDate);
+}
+
+function search(){
+	const preDateEl = document.querySelector('#preDate').value;
+	const afterDateEl = document.querySelector('#afterDate').value;
+	
+	//오늘날짜보다 높을경우, 아무것도 입력하지 않았을때 리턴 
+	let ndate = new Date();
+	let y,m,d;
+	 y = ndate.getFullYear();
+	 m = ndate.getMonth();
+	 d = ndate.getDate();
+	
+	pdate = preDateEl.replace(/(\.)|(\-)|(\/)/g,"");
+		
+	let py = parseInt(pdate.substring(0,4));
+	let pm = parseInt(pdate.substring(4,6));
+	let pd = parseInt(pdate.substring(6));
+	 
+	
+	
+	if(! isValidDateFormat(preDateEl) || ! isValidDateFormat(afterDateEl)){
+		alert('날짜 형식이 올바르지 않습니다.')
+		return;
+	}
+	
+	
+	
+	
+	
+}
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+<h3>내장객체 = Date</h3>
+
+<script type="text/javascript">
+var y,m,d;
+
+//2023년 2월의 마지막일자는 ? 
+y = 2023;
+m = 2;
+d = (new Date(y,m,0)).getDate();//2023년 3월 0일 = 전 일
+console.log(d);
+
+//전달의 마지막 일자
+d = (new Date(y,m-1,0)).getDate(); //2023년 2월 0일 = 전일(전달)
+console.log(d);
+
+</script>
+
+
+</body>
+</html>

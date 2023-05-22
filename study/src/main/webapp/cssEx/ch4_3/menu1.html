@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<style type="text/css">
+
+header{
+	height: 55px; padding: 1rem; color: #fff;
+	background: darkblue; font-weight: 700;
+	
+	display: flex;
+	align-items: center; /* 수직 가운데 */
+	/*justify-content: center;*/ /* center: 수평 가운데 */
+	justify-content: space-between; /* header의 자식들이 벌어짐(자손x) */
+	/*space-between  :  처음껀 시작점, 마지막껀 끝점, 나머지들은 중간에 배치 */
+}
+
+nav > span{
+	cursor: pointer; padding: 10px;
+}
+main{
+	min-height: 1100px;
+}
+footer{
+	height: 50px; line-height: 50px; text-align: center;
+}
+
+</style>
+
+</head>
+<body>
+
+<header>
+  <h1>스터디</h1>
+  <nav>
+    <span>Menu1</span>
+    <span>Menu2</span>
+    <span>Menu3</span>
+  </nav>
+</header>
+
+<main>
+  <h3> 고정되지 않는 메뉴 </h3>
+  <p>main 영역</p>
+  <p>main 영역</p>
+  <p>main 영역</p>
+  <p>main 영역</p>
+  <p>main 영역</p>
+  <p>main 영역</p>
+</main>
+
+<footer>
+  <p>footer 영역</p>
+</footer>
+
+</body>
+</html>

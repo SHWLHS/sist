@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+<h3>파일 용량</h3>
+
+<form name="frm">
+	<p> <input type="file" name="selectFile"> </p>
+	<p> <button type="button" onclick="sendOk();">등록하기</button> </p>
+	
+</form>
+
+<script type="text/javascript">
+function checkFilesize(file){
+	let maxSize = 10 * 1024 *1024 ; //10MB
+	
+	//파일속성은  multiple 속성을 가지고 있어서 배열로만 처리가능 (파일을 여러개 선택하려면 multiple속성을 적용해야함)
+	//files 라는 속성이용
+	let size = 0;
+	//size = file.files[0].size; //파일이 한개일때 사이즈 가져오는 방법
+	for(let f of file.files){//파일이 여러개일때 사이즈 가져오는 방법
+		size += f.size;//size : 파일의 크기
+	}
+	
+	//console.log(size + 'byte'); //size는 byte로 반환
+	
+	
+	return maxSize >= size; // size가 10MB보다 작을때(size가 10MB까지 가능) true
+}
+
+function sendOk(){
+	const f = document.frm;
+	
+	if(! f.selectFile.value){
+		alert('파일은 필수입니다.');
+		f.selectFile.focus();
+		return;
+	}
+	
+	if( ! checkFilesize(f.selectFile) ){
+		alert('파일은 10MB까지만 가능합니다.');
+		f.selectFile.focus();
+		return;
+	}
+	
+	alert('성공');
+}
+
+</script>
+
+
+</body>
+</html>

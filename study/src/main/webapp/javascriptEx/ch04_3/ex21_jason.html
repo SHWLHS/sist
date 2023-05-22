@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+<h3>json</h3>
+
+<script type="text/javascript">
+//객체
+var obj = {name:'홍길동', kor:90, eng:80};//객체
+console.log(obj);
+
+//자바스크립트 객체를 JSON 형식의 문자열로 변환
+//JSON : 키:값
+var s = JSON.stringify(obj);
+console.log(s);//'{"name":"홍길동","kor":90,"eng":80}'
+
+//JSON 형식의 문자열을 자바스크립트의 값이나 객체로 변환
+s = '{"name":"홍길동","kor":90,"eng":80}';
+var job = JSON.parse(s); // JSON 형식의 문자열을 구문 분석하여 javascript 값이나 객체로 생성
+console.log(job);//object
+console.log(job.name);//홍길동
+
+
+</script>
+
+
+
+</body>
+</html>

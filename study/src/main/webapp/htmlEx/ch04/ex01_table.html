@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h3>table 태그</h3>
+
+<!-- 모든 tr태그안의 td또는 th 개수는 일치해야 함 -->
+<!-- tr태그 안에 td,th가 올 수 있음 -->
+<!-- td 또는 th 태그에만 데이터를 입력 가능 -->
+<!-- 테이블이 있으면 무조건 tr이 있어야하고 tr안에는 th 또는 td가 와야함 -->
+<table>
+	<tr>
+		<td>A</td>
+		<td>B</td>
+	</tr>
+	<tr>
+		<td>C</td>
+		<td>D</td>
+	</tr>
+	<tr>
+		<td>E</td>
+		<td>F</td>
+	</tr>
+</table>
+<hr>
+
+<!-- border : table과 td에 테두리를 표시 -->
+<table border="1" style="width: 700px" >
+	<tr>
+		<th>학번</th>
+		<th>이름</th>
+		<th>국어</th>
+		<th>영어</th>
+		<th>수학</th>
+		<th>총점</th>
+		<th>평균</th>
+	</tr>
+	<tr>
+		<td>1111</td>
+		<td>김자바</td>
+		<td>100</td>
+		<td>100</td>
+		<td>100</td>
+		<td>300</td>
+		<td>100</td>
+	</tr>
+	<tr>
+		<td>2222</td>
+		<td>이자바</td>
+		<td>90</td>
+		<td>90</td>
+		<td>90</td>
+		<td>270</td>
+		<td>90</td>
+	</tr>
+	<tr>
+		<td>3333</td>
+		<td>다자바</td>
+		<td>80</td>
+		<td>80</td>
+		<td>80</td>
+		<td>240</td>
+		<td>80</td>
+	</tr>
+		
+</table>
+<hr>
+
+<!-- td의 width속성 : td의 폭을 지정. 단위를 기술하지 않는다. -->
+<!-- th : 자동 가운대 정렬 , 글자 진하게 -->
+<!-- tr, td 에서 align 속성으로 테스트 정렬 가능 -->
+<!-- 테이블태그 내에서 align속성은 일일히 줘야해서 css에서 주는게 편하다 -->
+<table border="1" style="width: 550px;">
+	<tr>
+		<th width="70">학번</th>
+		<th>이름</th> <!--width을 하나 안주면 자동으로 조정됨 550-420 = 130 -->
+		<th width="70">국어</th>
+		<th width="70">영어</th>
+		<th width="70">수학</th>
+		<th width="70">총점</th>
+		<th width="70">평균</th>
+	</tr>
+	<tr align="center">
+		<td>1111</td>
+		<td>김자바</td>
+		<td>100</td>
+		<td>100</td>
+		<td>100</td>
+		<td>300</td>
+		<td align="right">100</td>
+	</tr>
+	<tr align="center">
+		<td>2222</td>
+		<td>이자바</td>
+		<td>90</td>
+		<td>90</td>
+		<td>90</td>
+		<td>270</td>
+		<td align="right">90</td>
+	</tr>
+	<tr align="center">
+		<td>3333</td>
+		<td>다자바</td>
+		<td>80</td>
+		<td>80</td>
+		<td>80</td>
+		<td>240</td>
+		<td align="right">80</td>
+	</tr>
+		
+</table>
+
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+<h3>텍스트 파일 읽기</h3>
+
+<form name="frm">
+<p>
+	<input type="file" name="selectFile" accept="text/*" onchange="readFile(this)">
+					<!-- accept="text/*" : 텍스트 파일만 허용 -->
+</p>
+</form>
+<hr>
+<p>
+	<textarea rows="10" cols="80" id="content"></textarea>
+</p>
+
+<script type="text/javascript">
+function readFile(inputEl){
+	if( ! inputEl.value){//input태그에 value(파일선택)가 없을경우 return
+		return;
+	}
+	
+	const file = inputEl.files[0];//첫번째 파일을 변수에 저장
+	
+	let reader = new FileReader(); //파일을 읽을수 있는 기능을 제공
+	
+	//onload이벤트 : 읽어 들이기에 성공한 경우 호출하는 이벤트 핸들러
+	reader.onload = function(e){
+		const $EL = document.querySelector('#content');
+		let s = e.target.result;// 파일의 내용
+		$EL.value = s;
+	};
+	reader.readAsText(file); //utf-8파일의 내용을 읽음
+}
+
+</script>
+
+</body>
+</html>

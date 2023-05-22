@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+p{height: 20px;}
+
+/* name=subject 속성 */
+input[name=subject] {background: yellow;}
+
+/* name 속성을 가진 요소 */
+input[name]{border: 1px solid blue;}
+
+/* name 속성값이 a로 시작하는 요소 */
+input[name^=a]{border-right: 3px solid red;}
+
+/* title 속성값이 "버튼"으로 끝나는 요소 */
+input[title$="버튼"]{ background: green;}
+
+/* name 속성값에 x를 포함하는 요소 */
+input[name*=x]{ border-left: 3px solid orange;}
+
+/* title 속성값에 "내용" 이라는 단어(띄어쓰기로 구분)가 있는 요소 */
+input[title~="내용"]{background: gray;}
+
+
+/* p요소중에서 lang 속성값이 "en"과 일치하거나 "en-"로 시작하는 요소 */
+p[lang|=en] {color: red;}
+
+
+</style>
+
+</head>
+<body>
+
+<h3>어트리뷰트 셀렉터(Attribute Selector) : 주어진 어트리뷰트의 존재여부나 그 값에 따라 요소를 선택</h3>
+
+<form>
+	<p> <input type="text" name="subject" title="과목 입력"> </p>
+	<p> <input type="text" name="ax1" title="1장 제목 입력"> </p> 
+	<p> <input type="text" name="as2" title="1장 내용 입력"> </p>
+	<p> <input type="text" name="bs1" title="2장 제목 입력"> </p>
+	<p> <input type="text" name="bx2" title="2장 내용 입력"> </p>
+	<p> <input type="file" name="selectFile"> </p>
+	<p>
+			<input type="button" value="입력완료" title="입력 버튼">
+			<input type="reset" value="입력취소" title="취소 버튼">
+	</p>
+</form>
+
+<div style="margin-top: 30px;">
+  <p lang="en">JAVA</p>
+  <p lang="en-us">JAVA</p>
+  <p lang="en-gb">JAVA</p>
+  <p lang="us">JAVA</p>
+  <p lang="no">JAVA</p>
+</div>
+
+</body>
+</html>

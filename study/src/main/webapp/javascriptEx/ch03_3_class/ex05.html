@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+<h3> 클래스 - 메소드</h3>
+
+<script type="text/javascript">
+class Rect{
+	constructor(width, height){
+		this.width = width;
+		this.height = height;
+	}
+	
+	//getter
+	get area(){
+		return this.width * this.height;
+	}
+	
+	//메소드
+	calcArea(){
+		return this.width * this.height;		
+	}
+}
+
+var obj = new Rect(10,5);
+console.log(obj.area);//50, getter호출
+console.log(obj.calcArea());//50, 메소드 호출
+
+
+
+</script>
+
+
+</body>
+</html>

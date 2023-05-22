@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+<h3>객체 - 생성</h3>
+
+
+<script type="text/javascript">
+var s;
+
+// 1-1.객체 리터널(이니셜라이저)을 이용한 객체 생성
+//var obj = {'name': '홍길동', 'age':20};
+var obj = {name: '홍길동', age:20};//{프로퍼티명 : 값, 프로퍼티명 : 값} 프로퍼티명만 ''생략가능, 값은안됨!
+console.log(typeof obj);//object
+console.log(obj);//▶ {name: '홍길동', age: 20}  또는 ▶object
+
+//객체의 프로퍼티 접근
+console.log(obj.name);//홍길동
+
+//속성 값 변경
+obj.name = '김자바';
+console.log(obj.name);//김자바
+
+if(obj.age >= 10){
+	s = `${obj.name} 님은 성인 입니다.`;
+}else{
+	s = `${obj.name} 님은 학생 입니다.`;
+}
+console.log(s);
+
+obj.city = '서울'; //동적으로 속성을 추가
+console.log(obj);//▶{name: '김자바', age: 20, city: '서울'}
+
+
+//1-2. 객체 리터널을 이용한 빈 객체 생성
+var obj2 ={};
+console.log(typeof obj2);//object
+console.log(obj2);//{}
+
+obj2.subject = '자바'; //실행시 동적으로 속성 추가
+console.log(obj2);//▶{subject: '자바'}
+console.log(obj2.subject);//자바
+
+//1-3. 객체 리터널을 이용한 객체 생성 
+var obj3 = {
+	name : '홍길동',//속성
+	age : 20,//속성
+	state : function(){//함수
+		return this.age >= 19? '성인' : '선영';//에러
+	},
+	msg : function(){//함수
+		//메소드에서 속성이나 다른 메소드를 호출할 때 this 생략 불가
+		let s = this.state();
+		let m = `${this.name} 님은 ${s} 입니다.`;
+		console.log(m);
+	}
+};
+console.log(obj3);//▶{name: '홍길동', age: 20, state: ƒ, msg: ƒ}
+obj3.msg();//홍길동 님은 성인 입니다.
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

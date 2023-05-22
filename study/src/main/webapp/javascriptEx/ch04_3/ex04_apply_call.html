@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+<h3>apply(), call()</h3>
+
+
+<script type="text/javascript">
+var a = ['a','b','c'];
+var b = [1,2,3];
+/*
+for(let i=0; i<b.length; i++){
+	a.push(b[i]);a,b,c,1,2,3
+}
+console.log(a.join());
+*/
+
+//a.push(b);//b배열을 하나의 요소로 추가
+//console.log(a.length);//4
+
+/*
+for(let n of b){
+	a.push(n);
+}
+console.log(a.join());//a,b,c,1,2,3
+*/
+
+//a배열 뒤에 b의 배열 요소 추가하기
+a.push.apply(a,b);
+console.log(a.join());//a,b,c,1,2,3
+
+
+
+
+</script>
+
+</body>
+</html>

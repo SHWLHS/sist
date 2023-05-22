@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+<h3>객체 - 객체에 프로퍼티나 메소드 추가</h3>
+
+<script type="text/javascript">
+//객체에 프로퍼티나 메소드를 추가하면 해당 객체에만 추가
+function User(name,age){
+	this.name = name;
+	this.age = age;
+}
+
+var obj = new User('이자바',21);//obj 객체 생성
+obj.score = 80;//obj 객체에 속성 추가
+obj.state = function(){ //obj 객체에 메소드 추가
+	return this.age >= 19 ? '성인':'미성년자';
+};
+
+console.log(obj.name);//이자바
+console.log(obj.score);//80
+console.log(obj.state());//성인
+
+
+var obj2 = new User('김자바',22);
+
+console.log(obj2.name);//김자바
+console.log(obj2.score);//undefined. 속성이 존재하지 않을땐 undefined.
+//console.log(obj2.state()); //에러. 메소드가 존재하지 않을땐 에러.
+
+
+</script>
+
+
+</body>
+</html>

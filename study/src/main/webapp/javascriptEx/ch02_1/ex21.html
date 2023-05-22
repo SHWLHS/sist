@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+<h3>연산자</h3>
+
+<script type="text/javascript">
+var a,b,c;
+
+c=4/2;
+console.log(c);
+
+c=1/2;
+console.log(c);
+
+c=2/0;
+console.log(c);// Infinity : 무한대를 나타내는 숫자
+if(c === Infinity){
+	console.log("0으로 나누었습니다.")
+}
+
+a=2;
+b=10;
+c=a**b; //거듭제곱
+console.log(c);//1024
+
+c=2**3**2; // 2 ** (3 ** 2 );//거듭제곱은 오른쪽부터 계산
+console.log(c); //512
+
+//c= -2**2;  //에러. 모호한 표현은 허용하지 않음
+
+// 문자열 결합
+a = "seoul";
+b = "korea";
+c = a+b;
+console.log(c);
+
+a = "1.1";
+b = "1.1";
+c = a+b;
+console.log(c); // 1.11.1
+
+c = (+a) + (+b);// 단항연산자 + 가 앞에 붙어서 숫자로 바뀌어서 계산
+console.log(c); //2.2 
+
+
+</script>
+
+</body>
+</html>

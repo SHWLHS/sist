@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+<h3> 구조분해 : 객체 </h3>
+
+<script type="text/javascript">
+var obj = {name:'김선영', score:5};
+var{name,score} =obj;
+console.log(name);//김선영
+console.log(score);//5
+
+//선언 없는 할당
+var a,b;
+({a,b} = {a:1, b:2});//반드시 괄호와 세미콜론이 있어야함.없으면 함수로 인식
+console.log(a);//1
+console.log(b);//2
+
+//기본값
+var {x,y,z=100} = {x:10, y:20};
+console.log(x);//10
+console.log(y);//20
+console.log(z);//100
+
+</script>
+
+
+
+</body>
+</html>

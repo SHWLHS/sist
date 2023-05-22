@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/styleme.css" type="text/css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
+
+<style type="text/css">
+
+body{
+	background: #eee;
+}
+
+.btn {
+	padding: 10px;
+	width: 350px;
+	color: #333;
+	border: 1px solid #999;
+	background-color: #fff;
+	border-radius: 4px; /* border둥글게 하는것*/
+	font-weight: 500;
+	cursor:pointer;
+	font-size: 14px;
+	font-family: "맑은 고딕", 나눔고딕, 돋움, sans-serif;
+	vertical-align: baseline;
+}
+
+.body-container{
+	width: 700px;
+	margin: 30px auto;
+}
+
+.body-container .title {
+	font-size: 16px; font-weight: 700; padding: 30px 0;  margin: 30 auto; text-align: center;
+}
+
+.table{
+	 width: 100%; border-spacing: 0; border-collapse: collapse; margin: 0 auto;
+}
+
+input {
+	width: 50%; padding: 10px; text-align: left;
+}
+
+div {
+	margin-top: 20px; margin-bottom: 8px; 
+}
+
+.mini-title {
+	font-size: 13px; font-weight: bold; text-align: left; margin-left: 25%;
+}
+
+</style>
+
+
+
+<script type="text/javascript">
+function send(){
+	const f = document.myForm;
+	let s;
+	
+	s = f.id.value;
+	
+	alert(s);
+}
+
+
+</script>
+
+</head>
+
+<body>
+
+<div class="body-container">
+	
+	<div class="title">
+		<h2><i class="fa-solid fa-check"></i>회원가입</h2>
+	</div>
+	<form name="myForm" action="javascript:send();" method="post" style="text-align: center;">
+		
+			
+		
+			<div class="mini-title">아이디</div>
+			<table class="table">
+				<tr>
+					<td>
+						<input type="text" name="userId" required="required" maxlength="10" pattern="[A-Za-z0-9]+" placeholder="아이디 입력">
+					</td>
+				<tr>
+			</table>
+			
+			<div class="mini-title">비밀번호</div>
+			<table class="table">
+				<tr>
+					<td>
+						<input type="password" name="userPwd" required="required">
+					</td>
+				<tr>
+			</table>
+			
+			<div class="mini-title">비밀번호 &nbsp; 재확인</div>
+			<table class="table">
+				<tr>
+					<td>
+						<input type="password" name="userPwd1" required="required">
+					</td>
+				<tr>
+			</table>
+			
+			<div class="mini-title">이름</div>
+			<table class="table">
+				<tr>
+					<td>
+						<input type="password" name="userName" required="required">
+					</td>
+				<tr>
+			</table>
+			
+			<div class="mini-title">생년월일</div>
+			<table class="table">
+				<tr>
+					<td>
+						<input type="date" name="birth" required="required" 
+						placeholder="년(4자)" style="margin: 0;">
+					</td>
+					
+				<tr>
+			</table>
+			
+			<div class="mini-title">성별</div>
+			<table class="table">
+				<tr>
+					<td>
+						<select name="gender" style="width: 50%; padding: 10px; ">
+							<option value="">성별</option> 
+							<option value="M">남자</option> 
+							<option value="F">여자</option> 
+							<option value="">선택안함</option> 
+						</select>
+					</td>
+				<tr>
+			</table>
+			
+			<div class="mini-title">본인&nbsp;확인&nbsp;이메일</div>
+			<table class="table">
+				<tr>
+					<td>
+						<input type="text" name="email" placeholder="선택입력">
+					</td>
+				<tr>
+			</table>
+			
+			<div class="mini-title">휴대전화</div>
+			<table class="table" >
+				<tr>
+					<td>
+						<input type="text" name="tel1" required="required" placeholder="전화번호&nbsp;입력" 
+							style="margin-bottom: 40px;" >
+					</td>
+				<tr>
+			</table>
+
+			
+	<p style="text-align: center;">
+	<!-- submit 버튼과 reset 버튼은 form 태그에서만 유효하다. -->
+		<button type="submit" name="sendButton" class="btn">회원가입</button><!-- submit : action의 서버 주소로 form요소를 전송 -->
+	</p>
+	
+	</form>
+
+</div>
+
+</body>
+</html>

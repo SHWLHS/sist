@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+/*기본패딩,기본마진이 있어서 0으로 시작*/
+* { padding:0; margin: 0; }
+body {
+	/*font-family 여러개주는건 폰트가 없을수도있으니깐 여러개줌*/
+	font-family: 맑은 고딕, 나눔고딕, 돋움, sans-serif;
+	font-size: 14px;
+	color: #222;
+}
+
+.body-container{
+	width: 700px;
+	margin: 30px auto;
+}
+
+.body-container .title{/* body-container의 자손 : title*/
+	font-size: 16px; font-weight: 700; padding: 13px 0;
+}
+
+.table{ width: 100%; border-spacing: 0; border-collapse: collapse;}
+.table th, .table td {padding-top: 10px; padding-bottom: 10px;}
+
+/*기본적으로 tr은 border를 못줌*/
+.table-border thead > tr {border-top: 2px solid #333; border-bottom: 1px solid #ced4da; }
+.table-border tbody > tr { border-bottom: 1px solid #ced4da; }
+
+.table-list thead > tr { background: #f8f9fa;}
+.table-list td, .table-list th { text-align: center;}
+.table-list td:nth-child(9n+8) { text-align: right; padding-right: 15px;}
+		/*table-list에 있는 td중에서 9개컬럼중에서 8번째 컬럼을 오른쪽 정렬*/
+
+</style>
+
+</head>
+<body>
+
+<div class="body-container">
+	<div class="title">
+		<h3>성적처리</h3>	
+	</div>
+	
+	<table class="table table-border table-list"><!-- table과 table-border속성 둘다 지정 -->
+		<thead>
+			<tr>
+				<th width="70">학번</th>
+				<th width="100">이름</th>
+				<th width="100">생년월일</th>
+				<th width="60">국어</th>
+				<th width="60">영어</th>
+				<th width="60">수학</th>
+				<th width="60">총점</th>
+				<th width="60">평균</th>
+				<th>변경</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr>
+				<td>1001</td>
+				<td>김자바</td>
+				<td>2000-10-10</td>
+				<td>100</td>
+				<td>100</td>
+				<td>100</td>
+				<td>300</td>
+				<td>100</td>
+				<td>
+					<span>수정</span> | <span>삭제</span>
+				</td>
+			</tr>
+			<tr>
+				<td>1002</td>
+				<td>이자바</td>
+				<td>2000-08-07</td>
+				<td>80</td>
+				<td>80</td>
+				<td>80</td>
+				<td>240</td>
+				<td>90</td>
+				<td>
+					<span>수정</span> | <span>삭제</span>
+				</td>
+			</tr>
+			<tr>
+				<td>1003</td>
+				<td>다자바</td>
+				<td>2000-09-09</td>
+				<td>100</td>
+				<td>80</td>
+				<td>90</td>
+				<td>270</td>
+				<td>90</td>
+				<td>
+					<span>수정</span> | <span>삭제</span>
+				</td>
+			</tr>
+			<tr>
+				<td>1004</td>
+				<td>하자바</td>
+				<td>2001-07-09</td>
+				<td>90</td>
+				<td>90</td>
+				<td>90</td>
+				<td>270</td>
+				<td>90</td>
+				<td>
+					<span>수정</span> | <span>삭제</span>
+				</td>
+			</tr>
+			<tr>
+				<td>1005</td>
+				<td>더자바</td>
+				<td>2000-08-09</td>
+				<td>90</td>
+				<td>90</td>
+				<td>90</td>
+				<td>270</td>
+				<td>90</td>
+				<td>
+					<span>수정</span> | <span>삭제</span>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</body>
+</html>

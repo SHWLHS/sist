@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+* {
+	padding: 0; margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 14px;
+	font-family: "Malgun Gothic", "맑은 고딕", NanumGothic, 나눔고딕, 돋움, sans-serif;
+}
+
+main {
+	margin: 30px auto;
+	width: 980px;
+	min-height: 500px;
+}
+
+.item-container {
+	width: 100%;
+	
+	display: grid;
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-columns: repeat(3, 270px);
+	gap: 10px; 
+}
+
+.item {
+	cursor: pointer;
+	border: 1px solid #eee;
+	height: 280px;
+	
+	display: flex;
+	flex-direction:column;
+	justify-content: space-between;
+	margin-top: 10px;
+}
+
+.item:hover {
+	border: 1px solid #ccc;
+}
+
+.item-thumb img {
+	/* 이미지 크기를 부모 크기로 */
+	display: block;
+	width: 100%;
+	/* height: auto; */
+	height: 179px;
+}
+
+.item-desc {
+	margin: 10px;
+}
+
+.item-desc .title {
+	font-size: 17px;
+	font-weight: 700;
+	letter-spacing: -1px;
+	height: 45px;
+}
+.item-desc .date {
+	font-size: 12px;
+	font-weight: 500;
+}
+
+</style>
+
+</head>
+<body>
+
+<main>
+	<div class="item-container">
+		<div class="item">
+			<div class="item-thumb">
+				<img src="../img2/1.png">
+			</div>
+			<div class="item-desc">
+				<p class="title">예제</p>
+				<p class="date">2022.03.22~2022.02.23</p>
+			</div>
+		</div>
+		<div class="item">
+			<div class="item-thumb">
+				<img src="../img2/2.png">
+			</div>
+			<div class="item-desc">
+				<p class="title">예제 2</p>
+				<p class="date">2022.03.22~2022.02.23</p>
+			</div>
+		</div>
+		<div class="item">
+			<div class="item-thumb">
+				<img src="../img2/3.png">
+			</div>
+			<div class="item-desc">
+				<p class="title">예제 3</p>
+				<p class="date">2022.03.22~2022.02.23</p>
+			</div>
+		</div>
+		
+		<div class="item">
+			<div class="item-thumb">
+				<img src="../img2/4.png">
+			</div>
+			<div class="item-desc">
+				<p class="title">예제 4</p>
+				<p class="date">2022.03.22~2022.02.23</p>
+			</div>
+		</div>
+		<div class="item">
+			<div class="item-thumb">
+				<img src="../img2/5.png">
+			</div>
+			<div class="item-desc">
+				<p class="title">예제 5</p>
+				<p class="date">2022.03.22~2022.02.23</p>
+			</div>
+		</div>
+		<div class="item">
+			<div class="item-thumb">
+				<img src="../img2/6.png">
+			</div>
+			<div class="item-desc">
+				<p class="title">예제 6</p>
+				<p class="date">2022.03.22~2022.02.23</p>
+			</div>
+		</div>
+
+		<div class="item">
+			<div class="item-thumb">
+				<img src="../img2/7.png">
+			</div>
+			<div class="item-desc">
+				<p class="title">예제 7</p>
+				<p class="date">2022.03.22~2022.02.23</p>
+			</div>
+		</div>
+		<div class="item">
+			<div class="item-thumb">
+				<img src="../img2/8.png">
+			</div>
+			<div class="item-desc">
+				<p class="title">예제 8</p>
+				<p class="date">2022.03.22~2022.02.23</p>
+			</div>
+		</div>
+		<div class="item">
+			<div class="item-thumb">
+				<img src="../img2/9.png">
+			</div>
+			<div class="item-desc">
+				<p class="title">예제 9</p>
+				<p class="date">2022.03.22~2022.02.23</p>
+			</div>
+		</div>
+		
+	</div>
+</main>
+
+
+</body>
+</html>

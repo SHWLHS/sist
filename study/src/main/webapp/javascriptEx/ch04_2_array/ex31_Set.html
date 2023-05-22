@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+<h3>Set 객체</h3>
+
+<script type="text/javascript">
+/*
+ - Set 객체
+ 	: 값들의 집합
+ 	: 입력된 순서에 따라 저장된 요소를 반복처리 할 수 있다.
+ 	: 중복값을 허용하지 않음
+ */
+ 
+var set = new Set();
+set.add(100);
+set.add('java');
+set.add('oracle');
+set.add('html');
+set.add('css');
+set.add('spring');
+set.add('oracle');
+
+console.log( set.size );//6, 요소의 수
+
+console.log( set.has(100) );//true, item 존재 유무. 배열의 indexOf 보다 빠름
+
+set.delete("spring");//요소 삭제
+console.log(set.size); //5
+console.log('------------------------');
+
+//처음부터 순회
+for(let a of set){
+	console.log(a);// 100,java,oracle,html,css(순서대로 나옴)
+}
+console.log('------------------------');
+
+//forEach방법으로 처음부터 순회
+set.forEach( item => console.log(item));
+console.log('------------------------');
+
+// Set을 배열로 변환
+var arr = Array.from(set);
+console.log(arr.join());
+console.log('------------------------');
+
+//배열을 Set로 변환
+var set2 = new Set([1,2,3]);
+console.log(set2);//{1, 2, 3}
+console.log('------------------------');
+
+//Set 객체의 모든 요소 삭제
+set2.clear();
+console.log(set2.size);//0
+console.log('------------------------');
+
+//객체를 Set에 저장 : 객체는 주소가 저장
+var set3 = new Set();
+//객체를 저장하면 값이 저장되는게 아니라 주소가 저장됨
+var obj = {subject:'java',score:100};//객체(속성,메소드로 구성)
+set3.add(obj);//저장됨
+set3.add({subject:'java',score:100});//저장됨,obj와는 다른 객체
+set3.add({subject:'java',score:100});//저장됨,obj와는 다른 객체
+set3.add(obj);//저장안됨, 앞과 같은 객체라 중복값 허용 안함
+
+console.log( set3.size);//3 
+
+for(let o of set3){
+	console.log(o.subject + ':' + o.score);
+}
+
+</script>
+
+
+</body>
+</html>

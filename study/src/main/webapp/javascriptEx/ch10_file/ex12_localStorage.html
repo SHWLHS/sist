@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+<h3>localStorage</h3>
+
+<p>
+   <input type="text" id="subject" placeholder="좋아하는 과목">
+   <button type="button" onclick="addSubject()">추가</button>
+   <button type="button" onclick="deleteSubject()">삭제</button>
+</p>
+
+<div id="log"></div>
+
+<script type="text/javascript">
+//배열은 저장안되니깐 문자열로 바꿔서 저장하고 가져올때도 문자열로 고쳐서 가져옴
+
+
+viewSubject();
+
+function viewSubject(){
+   let ss = JSON.parse(localStorage.getItem('subject')) || [];   //서브젝이라는 이름으로 저장되있는거를 제이쓴으로 가져옴
+   let s = ss.join();
+   document.querySelector("#log").innerHTML = s;
+}
+
+function addSubject(){
+   const inputEl = document.querySelector("#subject");
+   let s = inputEl.value.trim();
+   if(!s){
+      inputEl.focus();
+      return;
+   }
+   
+   let ss = JSON.parse(localStorage.getItem('subject')) || [];//문자열을 json으로 변환
+   // let subject = localStorage.subject;
+   // let ss = subject ? JSON.parse(subject) : [] ;
+   
+   ss.push(s);
+   
+   localStorage.setItem('subject', JSON.stringify(ss));//json을 문자열로 변환
+   
+   inputEl.value = "";
+   inputEl.focus();
+   
+   viewSubject();
+}
+
+function deleteSubject(){
+	 const inputEl = document.querySelector("#subject");
+	 let s = inputEl.value.trim();
+	 //선택한것만 지우기
+	if( s ){//s에 값이 있으면 
+	   let ss = JSON.parse(localStorage.getItem('subject')) || [];//문자열을 json으로 변환
+		let idx = ss.indexOf(s);//위치 찾는것
+		
+		if(idx === -1 ){//배열에 존재하는 위치가 없으면
+			return;
+		}
+		
+		ss.splice(idx,1);//idx 위치의 항목 하나 지우기
+		
+		localStorage.setItem('subject', JSON.stringify(ss));//json을 문자열로 변환
+		   
+		inputEl.value = "";
+	   
+		//전체지우기
+	}else{
+	   localStorage.removeItem('subject');
+	}
+	
+   viewSubject();
+   
+}
+
+</script>
+
+
+</body>
+</html>

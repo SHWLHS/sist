@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+*{/*모두 마진 0으로 주기*/
+	margin:0;
+}
+
+</style>
+</head>
+<body>
+<!-- div태그는 width를 지정안하면 100% , 같은줄에 다른것도 붙히고 싶으면(float사용)  width조정하기 -->
+
+<h3 style="margin: 20px auto; width: 200px;">div : margin- 바깥쪽 여백</h3><!-- margin:위아래마진 왼오마진/ -->
+
+<div style="background: red; width: 300px; height: 50px;"></div>
+<div style="background: blue; width: 300px; height: 50px; margin: 20px"></div><!-- margin:바깥쪽 여백 -->
+<div style="background: green; width: 300px; height:50px;"></div>
+<div style="background: gray; width:300px; height: 50px; margin:10px 5px 20px 30px;"></div>
+														<!-- margin값 4개 줬을 때 : 위, 오른쪽, 아래, 왼쪽 -->
+														<!-- margin값 3개 줬을 때 : 위,좌우,아래 -->
+														<!-- margin값 2개 줬을 때 : 위아래,왼쪽오른쪽 -->
+														<!-- margin값 1개 줬을 때 : 전부 -->
+<hr>
+
+<!-- 위아래 여백은 20이고, 왼쪽 오른쪽은 auto 이므로 수평 가운대 정렬 -->
+<div style="background: tomato; width:300px; height: 50px; margin: 20px auto;"></div>
+
+</body>
+</html>

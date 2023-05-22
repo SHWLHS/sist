@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+
+
+</head>
+<body>
+
+<div style="text-align: center;">
+<h3>로또 구매하기</h3>
+<div style="margin: 30px auto;">
+	<input type="text" id="inputDate" >
+	<button type="button" onclick="lotto();">구매</button>
+</div>
+<hr>
+<div id="resultLayout" ></div>
+</div>
+
+
+<script type="text/javascript">
+function lotto(){
+	let inputDateEl = document.querySelector('#inputDate').value;
+	let result = [];
+	let out =''; 
+	
+	let p = /^[0-9]{1}$/;
+	if(! p.test(inputDateEl)){//정규식이 틀리면 리턴
+		alert('숫자만 입력 가능합니다.')
+		inputDateEl.focous;
+		return;
+	}
+	
+	if(inputDateEl > 5){
+		alert('최대 5개까지 구매가능합니다.');
+		inputDateEl.focous;
+		return;
+	}
+	
+	for(let i = 0; i<inputDateEl; i++){
+		for(let j = 0; j<6; j++){
+		let r = Math.floor((Math.random()*45)+1);
+			result[j]=r;
+		}
+		result.sort(function(a,b){
+			return a-b;
+		});
+		let s=result.join();
+		out +='<p>'+(i+1)+'번째 : '+s+'</p>';
+	}
+	
+	
+	
+	document.querySelector('#resultLayout').innerHTML = out;
+	
+}
+
+
+
+</script>
+
+</body>
+</html>

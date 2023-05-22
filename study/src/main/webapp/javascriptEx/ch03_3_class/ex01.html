@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+<h3>class</h3>
+<!-- 원래는 클래스 수업을 안함, 내가 직접 만들어서 할일 거의 없음 -->
+
+<script type="text/javascript">
+//클래스 
+class User{
+	//생성자 함수는 클래스 안에 constructor 이라는 이름으로 정의
+	constructor({name, age}){ //클래스안에서의 생성자 함수
+		//필드
+		this.name = name;
+		this.age = age;
+	}
+	sayHello(){//메소드(클래스 안에서 메소드는 function을 안붙혀도됨)
+		return `제이름은 ${this.name} 이고 나이는 ${this.age} 입니다.`;
+	}
+}
+
+var obj = new User({name:'홍길동',age:20});
+console.log(obj.name);//홍길동
+console.log(obj.sayHello());//제이름은 홍길동 이고 나이는 20 입니다.
+console.log(typeof User);//function
+
+
+
+</script>
+
+
+</body>
+</html>

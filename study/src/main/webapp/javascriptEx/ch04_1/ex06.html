@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+<div style="margin: 30px auto; text-align: center;">
+	<input type="date" id="inputDate" >
+	<button type="button" onclick="week();">확인</button>
+</div>
+<hr>
+<div id="resultLayout" style="text-align: center;"></div>
+
+
+<script type="text/javascript">
+function week(){
+	const inputE1 = document.querySelector("#inputDate");
+	
+	if(! inputE1.value){
+		inputE1.focus();
+		return;
+	}
+/*	
+	let ss = inputE1.value.split("-");
+	let y = parseInt(ss[0]);
+	let m = parseInt(ss[1]);
+	let d = parseInt(ss[2]);
+	alert(y+"년"+m+"월"+m+"일")
+*/
+	let inputs = inputE1.value;//길어서 변수에 담음
+	
+	let y = inputs.substr(0,4);
+	let m = inputs.substr(5,2);
+	let d = inputs.substr(8)
+	
+	//요일 구하기
+	let ww = ['일','월','화','수','목','금','토'];//배열
+	let date = new Date(y,m-1,d);
+	let w = date.getDay();//요일구하기
+
+	let s = ` ${inputs}는 ${ww[w]}요일 입니다.`;
+	
+	document.querySelector('#resultLayout').innerHTML = s;
+}
+
+
+</script>
+
+</body>
+</html>

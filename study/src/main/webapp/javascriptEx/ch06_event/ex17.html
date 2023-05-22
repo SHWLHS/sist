@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+
+<h3>키보드 이벤트: 한글입력 제한</h3>
+
+
+<p> 한글가능 : <input  type="text"> </p>
+<p> 한글제한 : <input  type="text" class="notKorean" > </p>
+<p> 한글제한 : <input  type="text" class="notKorean" > </p>
+<p> 한글제한 : <input  type="text" class="notKorean" > </p>
+<p> 한글가능 : <input  type="text"> </p>
+<p> 한글제한 : <input  type="text" class="notKorean" > </p>
+
+
+
+<script type="text/javascript">
+
+const inputELS = document.querySelectorAll('.notKorean');
+inputELS.forEach(function(el){
+	el.addEventListener('compositionstart',e=>{
+	const self = e.currentTarget;
+	self.blur();//blur() : focus를 뺏는것
+	
+	//다음 리페인트전 실행
+	requestAnimationFrame(function(){//다시 그림을 그리기 전
+		self.focus();//포커스를줌
+		//결과적으로 blur을 했어도 포커스가 계속 가 있음
+		});
+	});
+});
+
+for(let el of inputELS){
+	el.addEventListener('keyup', e =>{
+		if(e.keyCode===8||e.keyCode===9||e.keyCode==37||e.keyCode===39||e.keyCode==46){
+			return;
+		}
+		
+		//자음, 모음, 한글을 지움
+		let obj = e.currentTarget;
+		obj.value = obj.value.replace(/[ㄱ-ㅎㅏ-ㅣ가-힣]/g,'')// /[ㄱ-ㅎㅏ-ㅣ가-힣]/ : 한글을 나타내는 정규식
+	});
+
+}
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

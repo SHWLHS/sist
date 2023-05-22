@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+<h3>객체 - 생성</h3>
+
+<script type="text/javascript">
+//2. 생성자 함수를 이용한 객체 생성
+function User(name,age) {//생성자 함수는 대문자로!
+	this.name = name; //this.name : 속성
+	this.age = age;
+	/*	
+	this.state = function(){//메소드
+		return this.age >= 19? '성인' : '학생';
+	};
+	*/
+	//화살표 함수로 만들기
+	this.state = () => this.age >= 19 ? '성인' : '학생';
+	/*
+	this.msg = function(){
+		let s = `${this.name}은 ${this.state()} 입니다.`;
+		console.log(s);
+	};
+	*/
+	//화살표 함수로 만들기
+	this.msg = () => console.log(`${this.name}은 ${this.state()} 입니다.`);
+}
+
+var obj = new User('김자바',19);
+var obj2 = new User('김자바',18)
+console.log(obj.name);//김자바
+obj.msg();//김자바은 성인 입니다.
+
+console.log(obj === obj2);//false. 다른객체
+
+
+//3.Object.create() 함수를 이용한 객체 생성
+var book ={
+	subject:'자바',
+	msg:function(){
+		return '과목 : ' + this.subject;
+	}
+};
+
+var b1 = Object.create(book);
+var b2 = Object.create(book);
+b1.subject = 'HTML';
+b2.subject = 'CSS';
+ console.log( book.msg() );//과목 : 자바
+ console.log( b1.msg() );//과목 : HTML
+ console.log( b2.msg() );//과목 : CSS
+
+</script>
+
+</body>
+</html>

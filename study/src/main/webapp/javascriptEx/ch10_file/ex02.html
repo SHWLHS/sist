@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+<h3> File List : 선택한 파일의 파일명 </h3>
+
+<p>
+	<input type="file" id="selectFile" multiple="multiple">
+</p>
+
+<script type="text/javascript">
+var allfiles = function(){
+	const fileInput = document.querySelector('#selectFile');
+	const files = fileInput.files;
+	
+	for(let i=0; i<files.length; i++){//length는 요소의 개수
+		let f = files[i];
+		console.log(f.name);//파일의 이름
+		console.log(f);//파일에 대한 자세한 정보를 볼수있음
+	}
+};
+
+document.querySelector('#selectFile').onchange = allfiles;
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

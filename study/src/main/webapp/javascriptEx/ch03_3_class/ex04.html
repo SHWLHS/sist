@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+<h3>클래스 - 메소드 : getter, setter</h3>
+<script type="text/javascript">
+//getter,setter는 내부연산(이름에 님 붙히기)이 필요하거나 필드가 private일때 유용, 아닐땐 굳이?
+class User{
+	constructor(){
+		this._name = '';
+	}
+		
+	get name(){
+		return this._name;
+	}	
+	
+	set name(newName){
+		this._name = newName; 
+	}
+}
+
+var obj = new User();
+obj.name = '이자바';
+//getter와 setter는 호출할때 ()가 없음
+console.log(obj.name);//이자바
+
+
+</script>
+
+
+</body>
+</html>

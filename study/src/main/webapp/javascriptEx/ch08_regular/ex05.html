@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+<h3>정규식(regular expression)</h3>
+
+<script type="text/javascript">
+var p, s;
+
+// 자바 웹 오라클 중 하나라도 있으면 참
+p = /(자바|오라클|웹|web)/i;
+s = '프로그래밍 언어 자바 입니다.';
+console.log(p.test(s));//true
+
+//영문자로 시작하고 영문자와 띄어쓰기만 가능
+//p = /^[a-z][a-z\s]*$/i;
+p = /^(?=[a-z])[a-z\s]*$/i; //?=[a-z] ->a~z가 꼭 나와야함
+s = 'abc avc eee';
+console.log(p.test(s));//true
+
+</script>
+
+
+
+</body>
+</html>

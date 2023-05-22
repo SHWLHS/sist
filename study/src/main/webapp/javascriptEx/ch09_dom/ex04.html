@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+<div>
+   <p class="pc"><span style="color: red;">자바</span></p>
+</div>
+<hr>
+
+<div>
+   <p class="pc2"></p>
+</div>
+<hr>
+
+<div>
+   <p class="pc3"></p>
+</div>
+
+<script type="text/javascript">
+const pcEl=document.querySelector('.pc');
+const pcEl2=document.querySelector('.pc2');
+const pcEl3=document.querySelector('.pc3');
+
+var c1=pcEl.firstChild.nodeValue;//nodeValue : 태그가 아닌 텍스트
+var c2=pcEl.innerText;//텍스트만 출력
+var c3=pcEl.innerHTML;//태그
+var c4=pcEl.textContent;//노드 또는 하위 노드의 텍스트 반환
+
+console.log(c1);//null
+console.log(c2);//자바
+console.log(c3);//<span style="color: red;">자바</span>
+console.log(c4);//자바
+
+var s='<span style="color:red;">자바스크립트</span>';
+pcEl2.innerText=s;//텍스트로 출력
+pcEl3.innerHTML=s;//
+
+</script>
+
+</body>
+</html>

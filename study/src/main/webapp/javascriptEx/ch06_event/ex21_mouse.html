@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<style type="text/css">
+.box{
+	
+	width:300px; height: 300px;
+	border: 3px dotted gray;
+	padding: 20px;
+}
+</style>
+
+</head>
+<body>
+<h3>ctrl+click</h3>
+<div class="box"></div>
+
+
+<script type="text/javascript">
+//컨트롤키와 마우스왼쪽 눌렀을때 컨트롤과클릭눌렀습니다 창띄우기
+
+const boxEl = document.querySelector('.box');
+
+boxEl.addEventListener('click',function(e){
+	if(e.ctrlKey){
+		alert('ctrl+click');
+	}
+});
+
+
+
+
+
+</script>
+</body>
+</html>

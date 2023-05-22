@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+<h3>객체 -instance</h3>
+
+<script type="text/javascript">
+//생성자 함수
+function User(name){
+	this.name = name;
+}
+
+var obj = new User('자바');
+console.log( obj instanceof User);//true
+console.log( obj instanceof Object);//true. User의 상위 객체는 Object
+
+//---------------------------------------------------------------------
+
+//객체 리터널
+var obj2 = {};//객체 리터널로 생성된 객체는 Object객체
+
+console.log( obj2 instanceof Object);//true. 
+
+</script>
+
+
+
+</body>
+</html>

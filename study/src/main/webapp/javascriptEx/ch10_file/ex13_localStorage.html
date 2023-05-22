@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<style type="text/css">
+.list li{cursor:pointer;}
+.list li:hover:after, .list li.chk:after{content: '\26C4'; color: tomato;}
+.list li.chk:hover:after{color: green; content: '\26A1';}
+</style>
+
+</head>
+<body>
+
+
+<ul class="list">
+	<li id="java">자바</li>
+	<li id="oracle">오라클</li>
+	<li id="html">HTML</li>
+	<li id="javascript">자바스크립트</li>
+	<li id="spring">스프링</li>
+	<li id="css">CSS</li>
+</ul>
+
+<script type="text/javascript">
+let language = JSON.parse(localStorage.getItem('language')) || [];
+
+//처음에 실행할때 선택한것들이 별표가 나오게끔 설정
+language.forEach( (item) => document.getElementById(item).classList.add('chk'));
+
+
+document.querySelector('.list').addEventListener('click',function(e){
+	let id = e.target.id;//클릭한곳의 id
+	let item = e.target;//클릭한곳의 객체?
+	let index = language.indexOf(id);//클릭한곳의 아이디의인덱스
+	
+	if(index ===  -1){//없을때
+		language.push(id);
+		item.classList.add('chk');
+	}else{//있을때
+		language.splice(index,1);
+		item.classList.remove('chk');
+	}
+
+	localStorage.setItem('language',JSON.stringify(language));
+});
+</script>
+
+
+
+</body>
+</html>

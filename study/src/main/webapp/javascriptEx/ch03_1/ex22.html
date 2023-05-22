@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+<h3> 구조 분해 - 배열 </h3>
+
+
+<script type="text/javascript">
+var a = 1;
+var b = 3;
+
+//구조분해 사용전 a와 b의 값 바꾸기
+// var c=a; a=b; b=c;
+
+//구조분해로 a와 b의 값 바꾸기
+[a,b] = [b,a];
+console.log(a,b);// 3 1
+
+function fn(){
+	return [1,10];
+}
+var x, y;
+//x에는 1, y에는 10 값넣기
+//var a = fn(); x =a[0]; y=a[1];
+[x,y]=fn();
+console.log(x,y); //1 10
+
+var arr = [1,2,3,4];
+//1은 일반변수, 나머지는 배열에 담기
+var [a2,...b2] = arr;
+console.log(a2);//1
+console.log(b2);//[2,3,4]
+
+
+
+</script>
+
+
+
+</body>
+</html>

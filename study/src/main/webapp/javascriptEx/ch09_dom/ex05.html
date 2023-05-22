@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<style type="text/css">
+.layout { width: 300px; padding: 50px; text-align: center;}
+.yb {background: yellow;}
+.gb{background: green;}
+.border{border: 5px dotted gray;}
+</style>
+
+<script type="text/javascript">
+window.addEventListener('load',() => {
+	
+	//클래스추가
+	document.querySelector('.btn1').addEventListener('click',()=>{
+		const layoutEl = document.querySelector('.layout');
+		
+		//기존 클래스는 지우고 yb만 설정 (절대 이렇게 추가하면 안된다)
+		//layoutEl.className = 'yb';
+
+		//기존 클래스도 안지워지고 yb클래스 추가 (띄어쓰기 하기)
+		layoutEl.className += ' yb';
+
+		//classList : 읽기전용으로 클래스 속성의 컬렉션
+		//layoutEl.classList.add('yb'); //yb클래스 추가
+		//layoutEl.classList.add('border'); // border클래스 추가
+		
+		//classList 한줄로 가능
+		layoutEl.classList.add('yb','border'); //yb, border클래스 추가
+		
+		
+	});
+	
+	//클래스 토글
+	document.querySelector('.btn2').addEventListener('click',()=>{
+		
+		const layoutEl = document.querySelector('.layout');
+		
+		//toggle() : 토글기능
+		//layoutEl.classList.toggle('borders');
+		
+		let n = 5;
+		// n이10보다 작을때 gb클래스 추가(취소는안됨)-> 클래스를 조건달아서 추가하고 싶을때 toggle()사용
+		layoutEl.classList.toggle('gb',n<10);
+		
+	});
+	
+	//클래스 제거
+	document.querySelector('.btn3').addEventListener('click',()=>{
+		
+		const layoutEl = document.querySelector('.layout');
+		
+		//remove() : 제거
+		//layoutEl.classList.remove('yb');
+		//layoutEl.classList.remove('border');
+	
+		layoutEl.classList.remove('border','yb');//여러개 제거가능
+		
+	});
+	
+	//클래스 존재 여부
+	document.querySelector('.btn4').addEventListener('click',()=>{
+		
+		const layoutEl = document.querySelector('.layout');
+		
+		//contains() : 클래스 존재여부를 true/false로 반환
+		let b = layoutEl.classList.contains('border');
+		alert(b);
+		
+		
+	});
+	
+	//클래스 교체
+	document.querySelector('.btn5').addEventListener('click',()=>{
+		
+		const layoutEl = document.querySelector('.layout');
+		
+		//repalce('a','b') : a클래스를 b클래스로 교체 , 없으면 교체하지 않음 
+		layoutEl.classList.replace('yb','gb');//yb를 gb로 교체
+			//없으면 교체하지 않음
+		
+	});
+});
+</script>
+
+</head>
+<body>
+
+<h3>class 속성</h3>
+
+<div class="layout">클래스 추가 및 삭제</div>
+<hr>
+
+<p>
+	<button type="button" class="btn1">클래스 추가</button>
+	<button type="button" class="btn2">클래스 토글</button>
+	<button type="button" class="btn3">클래스 제거</button>
+	<button type="button" class="btn4">클래스 존재 여부</button>
+	<button type="button" class="btn5">클래스 교체</button>
+</p>
+
+
+
+
+</body>
+</html>

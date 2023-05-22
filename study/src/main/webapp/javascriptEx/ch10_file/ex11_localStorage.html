@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+<h3>localStorage</h3>
+
+<!-- 
+	데이터 보존기간 제한 없음(영구적)
+	도메인당 하나만 생성. 동일한 브라우저에서만 접근 가능(네이버를 크롬으로 로그인했는데 엣지로 열면 안됨)
+	쿠키를 이용한 설정을 대신할 수 있다.
+ -->
+ 
+ <p>
+ 	<button type="button" onclick="count();">증가</button>
+ 	<button type="button" onclick="deleteCount();">삭제</button>
+ </p>
+ <div id="log"></div>
+
+
+<script type="text/javascript">
+	
+	viewCount();
+
+	function viewCount(){
+	//Storage 제공하는지 안하는지 확인
+	if(typeof(Storage) === 'undefined'){//제공하지 않으면 undefined
+		return;
+	}
+	
+	let cnt = localStorage.count;
+	cnt = cnt? cnt : ""; //있으면 cnt 없으면 ""
+	document.querySelector('#log').innerHTML = "카운트 횟수 : " + cnt;
+}
+
+function count(){
+	if(typeof(Storage) === 'undefined'){
+		return;
+	}
+	//웹 스트로지에 저장된 값 가져오기
+	let cnt = localStorage.count;//undefined.거짓
+	//let cnt = loclaStorage.getItem("count");//null.거짓
+	
+	cnt = cnt? Number(cnt) + 1 : 1; //있으면 +1, 없으면 1
+	
+	//웹 스트로지에 저장
+	localStorage.count =cnt;
+	//localStorage.setItem("count",cnt);
+	
+	viewCount();
+}
+
+function deleteCount(){
+	if(typeof(Storage) === 'undefined'){
+		return;
+	}
+	
+	delete localStorage.count;//count 라는 이름으로 저장된 값 삭제
+	//localStorage.removeItem("count");
+	
+	//localStorage에 저장된 모든 내용 삭제
+	//localStorage.clear();
+	viewCount();
+}
+</script>
+
+</body>
+</html>

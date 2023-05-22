@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+.box{
+	width: 150px; height: 150px; 
+	margin: 50px 0 0 300px;
+	border: 3px dotted gray;
+	background: orange;
+	position: relative;
+}
+
+.absolute-box{
+ 	/* 부모가 relactive 이면 기준은 부모이고, 부모가 static이면 body최상단이 기준 */
+	/* absolute는 맨위로감(공중에뜬것같이) */
+	/* div는 블록태그라 width,height를 물려받아야하는데 absolute를 쓰면 상속안됨 */
+	position: absolute; 
+	left: 50px;
+	top: 50px;
+	width: 150px;
+	height: 150px;
+	background: #333;
+	color: #eee;
+	font-weight: bold;
+	text-align: center;
+	line-height: 150px;
+}
+
+</style>
+
+</head>
+<body>
+
+<h3>position:absolute - 요소가 문서의 일반적인 흐름을 따르지 않고, 페이지 레이아웃에 공간도 배정하지 않는다.</h3>
+
+<div class="box"><div class="absolute-box">parent-div</div></div>
+<div class="absolute-box">parent-body</div>
+<p>안녕하세요</p>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+.box{
+	width: 800px; margin: 30px auto;
+}
+
+.box ul {
+	margin: 0; clear: both;
+}
+
+.box ul > li {
+	list-style: none;
+	float: left;
+	padding: 7px 5px;
+	border-bottom: 1px solid #333;
+	text-align: center;
+}
+
+.num {
+	width: 15%;
+	padding: 5px;
+}
+
+.title{
+	width: 40%;
+	padding: 5px;
+}
+
+.name {
+	width: 15%;
+	padding: 5px;
+}
+
+.date {
+	width: 15%;
+	padding: 5px;
+}
+
+.hit{
+	width: 15%;
+	padding: 5px;
+}
+
+.box ul:first-child li{
+	border-top: 2px solid #333;
+	background: #eee;
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+
+<div class="box">
+	
+	
+	
+	<ul style="background: blue;">
+		<li class="num">번호</li>
+		<li class="title">제목</li>
+		<li class="name">작성자</li>
+		<li class="date">작성일</li>
+		<li class="hit">조회수</li>
+		
+	</ul>
+	
+	<ul>
+		<li class="num">2</li>
+		<li class="title" style="text-align: left;">제목2...</li>
+		<li class="name">스프링</li>
+		<li class="date">2023-04-05</li>
+		<li class="hit">10</li>
+		
+	</ul>
+	
+	<ul>
+		<li class="num">1</li>
+		<li class="title" style="text-align: left;">제목1...</li>
+		<li class="name">홍길동</li>
+		<li class="date"> 2023-04-05</li>
+		<li class="hit">100</li>
+		
+	</ul>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+<h3>forEach</h3>
+
+<script type="text/javascript">
+var arr = [1,2,3,4,5];
+var s = 0;
+
+//합 구하기
+//forEach는 return과 break 가 안됨
+/*
+arr.forEach(function(item){
+	s+=item
+});
+
+*/
+//화살표함수
+arr.forEach((item) => s+=item);
+console.log(s);//15
+</script>
+
+
+
+</body>
+</html>

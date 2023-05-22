@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+
+<h3>타이머 예제</h3>
+
+<div id="box"></div>
+
+<script type="text/javascript">
+function bg(){
+	//Math.random() : 0보다 크거나 같고 1보다 적은 난수 발생
+	//floor(): 소수점아래 절삭
+	let r = Math.floor(Math.random() * 256);//0~255난수발생
+	let g = Math.floor(Math.random() * 256);
+	let b = Math.floor(Math.random() * 256);
+
+	console.log(r,g,b);
+}
+
+setInterval("bg();",3000)//3초에 한번씩 무한반복
+
+
+
+
+
+</script>
+</body>
+</html>

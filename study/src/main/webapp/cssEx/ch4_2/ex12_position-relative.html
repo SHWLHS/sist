@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+.box{
+	width: 150px; height: 150px; margin: 30px;
+	border: 3px dotted gray;
+	background: orange;
+}
+
+.relative-box{
+	position: relative; /* 위치를 지정 할 수 있음 */
+	left: 50px; /* 부모의 위치가 아니라 내가 원래 있어야하는 위치에서 이동하는 것 */
+	top: 50px; /* position: relative를 줬기 때문에 left,top지정 가능한것 */
+	background: #333;
+	color: #eee;
+	font-weight: bold;
+	text-align: center;
+	line-height: 150px;
+}
+
+</style>
+
+</head>
+<body>
+
+<h3>position:relative - 일반적인 문서 흐름에 따라 배치하며, 위치를 지정할 수 있다.</h3>
+
+<div class="box"><div class="relative-box">parent-div</div></div>
+<div class="relative-box">parent-body</div>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<style type="text/css">
+#box {
+	width: 300px; height: 300px;
+	border: 5px solid gray;
+	margin: 30px auto;
+}
+</style>
+
+</head>
+<body>
+
+
+<h3>타이머 예제</h3>
+
+<div id="box"></div><!-- box가 스크립트보다 위로 올라와있어야함 -->
+
+<script type="text/javascript">
+//box가 body에 있기때문에 실행됨 , head안으로 들어가면 box가 메모리에 없기때문에 실행안됨(오류)
+function bg(){
+	//Math.random() : 0보다 크거나 같고 1보다 적은 난수 발생
+	//floor(): 소수점아래 절삭
+	let r = Math.floor(Math.random() * 256);//0~255난수발생
+	let g = Math.floor(Math.random() * 256);
+	let b = Math.floor(Math.random() * 256);
+
+	let s =`rgb(${r},${g},${b})`;
+	//console.log(s);
+	document.querySelector("#box").style.backgroundColor = s;
+
+	setTimeout("bg();",3000);//3초후에 bg를 부름 (무한루프가 됨)
+}
+
+bg();
+
+</script>
+</body>
+</html>

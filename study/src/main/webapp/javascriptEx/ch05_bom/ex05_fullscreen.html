@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+<style type="text/css">
+.container{
+   background-color: #fff;
+   width : 100%;
+   display : flex; /* 수직가운데 정렬이 가능함 */
+   justify-content: center;
+   align-items: center;
+}
+</style>
+</head>
+<body>
+
+<h3>fullscreen</h3>
+
+<div class="container">
+   <button type="button" onclick="enterFullscreen()">전체화면</button>
+   <button type="button" onclick="exitFull()">전체화면 취소</button>
+   <button type="button" onclick="toggleFullscreen()">전체화면 토글</button>
+</div>
+
+<script type="text/javascript">
+const fullscreen= elem => {//전체화면 만드는것
+	//모든 브라우저 설정
+	//requestFullscreen 제공하면 return 제공안하면 undefined 
+   if(elem.requestFullscreen) return elem.requestFullscreen();
+   if(elem.webkitRequestFullscreen) return elem.webkitRequestFullscreen();
+   if(elem.mozRequestFullscreen) return elem.mozRequestFullscreen();
+   if(elem.msRequestFullscreen) return elem.msRequestFullscreen();
+};
+
+const cancelFullscreen = () => {//전체화면 만든것을 취소하는것
+   if(document.exitFullscreen) return document.exitFullscreen();
+   if(document.webkitCancelFullscreen) return document.webkitCancelFullscreen();
+   if(document.mozCancelFullscreen) return document.mozCancelFullscreen();
+   if(document.msexitFullscreen) return document.msexitFullscreen();
+};
+
+//전체화면
+function enterFullscreen(){
+   const container = document.querySelector('.container');
+   //const container=document.querySelector('body');//바디로 전체화면은 안됨
+   
+   fullscreen(container);
+}
+
+function exitFull(){
+	cancelFullscreen();
+}
+
+function toggleFullscreen(){//토글 : 하나의 버튼으로 두가지 상태를 가지고 있는 스위치
+   if( ! document.fullscreenElement){//document가 fullscreenElement가지고 있지 않으면
+	   const container = document.querySelector('.container');
+	   fullscreen(container);//전체화명
+   }else{
+	   cancelFullscreen();//전체화면 닫기
+   }
+}
+
+
+</script>
+
+
+</body>
+</html>

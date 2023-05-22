@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+<h3>document 객체</h3>
+
+<form name ="myForm">
+	<p> 이름 : <input type="text" name="name"> </p>
+	<p> 생년월일 : <input type="text" name="birth"> </p>
+	<p> 나이 : <input type="text" id="age"> </p>
+	<p>
+		<button type="button" onclick="send()"> 확인 </button>
+	</p>
+</form>
+<hr>
+
+<div class="layout" ></div>
+
+
+<script type="text/javascript">
+function send(){
+	let s;
+	
+	//폼 접근
+	
+	//forms[0] : 가장 첫번째에 있는 form. 유사배열, 위험
+	//const f = document.forms[0];
+	
+	// form의 name속성을 이용하여 접근, 같은 name이 여러개있으면 안된다.
+	const f = document.myForm; 
+	//console.log(f);
+	
+	//form 객체를 이용하여 form 아래의 입력(input) 요소 접근 : 이름(name속성)으로 접근
+	let name = f.name.value;
+	
+	//getElementsByName() 메소드를 이용하여 name속성 접근 : 반환값이 배열
+	//form태그 없어도 접근 가능
+	let birth = document.getElementsByName('birth')[0].value;
+	
+	//getElementById() 메소드를 이용하여 id 속성으로 접근
+	//form태그 없어도 접근 가능
+	let age = document.getElementById('age').value;
+	
+	
+	
+	s = '이름 : ' + name + '<br>';
+	s += '생년월일 : ' + birth + '<br>';
+	s += '나이 : ' + age + '<br>';
+	
+	// class 속성의 속성값으로 접근
+	//getElementsByClassName() 반환값이 배열
+	//document.getElementsByClassName('layout')[0].innerHTML = s;
+	
+	//선택자를 이용하여 접근
+	 document.querySelectorAll('.layout')[0].innerHTML = s;
+	// document.querySelector('.layout').innerHTML = s;
+	
+	
+}
+
+</script>
+
+</body>
+</html>

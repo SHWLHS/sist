@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+<h3>apply(), call()</h3>
+
+
+<script type="text/javascript">
+//인자로넘긴 값을 join으로 받고싶을때
+/*
+function sub(a,b,c){
+	let arr = [];
+	arr.push(a);
+	arr.push(b);
+	arr.push(c);
+	console.log(arr.join() );
+}
+sub(1,'자바', true);//1,자바,true
+*/
+
+/*
+function sub(){//arguments : 매개변수가 없어도 인자 값을 가져올수있다
+	for (let i=0; i<arguments.length; i++){
+		console.log(arguments[i]);
+		
+	}
+}
+sub(1,'자바', true);//1 자바 true
+*/
+
+/*
+function sub(){
+		console.log(arguments.join());	//에러
+		//arguments는 배열과 유사하지만 배열은 아니며, 배열을 다루는 메소드가 없다.(join못씀)
+	}
+sub(1,'자바', true);//1 자바 true
+*/
+
+function sub(){
+	console.log(Array.prototype.join.call(arguments));
+}
+sub(1,'자바', true);//1,자바,true
+
+</script>
+
+</body>
+</html>
