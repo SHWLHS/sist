@@ -1,0 +1,19 @@
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	version="4.0">
+	
+	<servlet>
+		<servlet-name>myServlet</servlet-name>
+		<servlet-class>com.util.MyServlet</servlet-class>
+		<init-param>
+			<param-name>configFile</param-name>
+			<param-value>/WEB-INF/config.properties</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>myServlet</servlet-name>
+		<url-pattern>*.do</url-pattern><!-- 확장자 매핑 (절대로 앞에 /가 들어오면 안됨) 클라이언트가 ~~.do로 들어올때 myservlet으로 들어가게 설정-->
+	</servlet-mapping>	
+	
+</web-app>

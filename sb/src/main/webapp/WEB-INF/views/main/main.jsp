@@ -27,7 +27,17 @@
 	<div class="container">
 		<div class="body-container">	
 			<div class="d-grid">
-				메인 화면 입니다.
+				<p>메인 화면 입니다.</p>
+				
+				<div>
+					<p>접속자 통계</p>
+					<p>현재 접속자 : ${currentCount }</p>
+					<p>오늘 접속자 수 : ${toDayCount }</p>
+					<p>어제 접속자 수 : ${yesterDayCount }</p>
+					<p>전체 접속자 수 : ${totalCount }</p>
+				</div>
+				
+				
 			</div>
 		</div>
 	</div>
